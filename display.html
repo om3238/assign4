@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            color: #fff;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #222;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: #333;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <img src="image.png" alt="Logo" class="logo">
+    <div class="form-group">
+        <label for="username"></label>
+        <input type="text" id="username" placeholder="Enter your username">
+        <div class="error-message" id="usernameError"></div>
+    </div>
+
+    <div class="form-group">
+        <label for="password"></label>
+        <input type="password" id="password" placeholder="Enter your password">
+        <div class="error-message" id="passwordError"></div>
+    </div>
+
+    <button onclick="validateLogin()">Login</button>
+
+    <p><a href="mailto:support@smartserv.io">Forgot your password?</a></p>
+</div>
+
+<script src="process.js">
+
+</script>
+
+</body>
+</html>

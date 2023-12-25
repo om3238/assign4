@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 class="heading">Company Metrics</h1>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="box">
+            <h4>Total Revenue</h4>
+            <p>$50,000</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="box">
+            <h4>Total Jobs Avg</h4>
+            <p>50</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="box">
+            <h4>Tickets Created</h4>
+            <p>100</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="box">
+            <h4>Tickets Scheduled</h4>
+            <p>80</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="box">
+            <h4>Outstanding Amount</h4>
+            <p>$10,000</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="box">
+            <h4>Membership Sold</h4>
+            <p>30</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="box">
+            <h4>Jobs Completed</h4>
+            <p>70</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="box">
+            <h4>Total Cancelled</h4>
+            <p>20</p>
+        </div>
+    </div>
+</div>
+
+<div class="row chart-container">
+    <div class="col-md-6">
+        <canvas id="barChartLocation"></canvas>
+    </div>
+    <div class="col-md-6">
+        <canvas id="barChartType"></canvas>
+    </div>
+</div>
+
+<script>
+    // Sample data for charts
+    const barChartLocationData = {
+        labels: ['Everett', 'Seattle', 'Lynnwood', 'Bothell', 'Mukilteo', 'Edmonds'],
+        datasets: [{
+            label: 'Revenue by Job Location',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1,
+            data: [5000, 10000, 15000, 20000, 25000, 30000],
+        }]
+    };
+
+    const barChartTypeData = {
+        labels: ['Service Plumbing', 'Bid Works HVAC', 'Service HVAC', 'Bid Work Plumbing', 'HWT Replacement', 'Maintenance', 'Material Sell'],
+        datasets: [{
+            label: 'Revenue by Job Type',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1,
+            data: [10000, 15000, 12000, 18000, 25000, 20000, 22000],
+        }]
+    };
+
+    // Create bar charts
+    const barChartLocation = new Chart(document.getElementById('barChartLocation').getContext('2d'), {
+        type: 'bar',
+        data: barChartLocationData,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    const barChartType = new Chart(document.getElementById('barChartType').getContext('2d'), {
+        type: 'bar',
+        data: barChartTypeData,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
